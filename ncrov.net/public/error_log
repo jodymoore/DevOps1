@@ -1,0 +1,57 @@
+[04-Dec-2014 14:15:13 UTC] PHP Fatal error:  SQLSTATE[HY000] [1045] Access denied for user 'jodmoo_rover1'@'localhost' (using password: YES) in /home/jodyone/public_html/includes/functions.php on line 129
+[04-Dec-2014 14:16:29 UTC] PHP Fatal error:  SQLSTATE[HY000] [1045] Access denied for user 'jodmoo_rover1'@'localhost' (using password: YES) in /home/jodyone/public_html/includes/functions.php on line 129
+[04-Dec-2014 14:20:53 UTC] PHP Fatal error:  SQLSTATE[HY000] [1044] Access denied for user 'jody'@'localhost' to database 'jodmoo_rover1' in /home/jodyone/public_html/includes/functions.php on line 129
+[04-Dec-2014 14:22:20 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 14:22:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 14:27:03 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 35
+[04-Dec-2014 14:27:03 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/templates/header.php:12) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 14:27:56 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 35
+[04-Dec-2014 14:27:56 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:35) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 14:36:43 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 35
+[04-Dec-2014 14:36:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:35) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 14:49:02 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 14:49:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 14:52:28 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 14:52:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 14:54:41 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 14:54:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 187
+[04-Dec-2014 14:55:50 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 14:55:50 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 187
+[04-Dec-2014 14:58:55 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 14:58:55 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 15:07:00 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 15:07:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 15:07:21 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 15:07:21 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 15:10:36 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 36
+[04-Dec-2014 15:10:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:36) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 15:14:35 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 15:14:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 15:31:11 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 15:31:11 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 16:38:47 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:38:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 16:44:07 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:46:01 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:48:01 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:50:27 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:50:27 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 38
+[04-Dec-2014 16:51:31 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:53:12 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:54:58 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:54:58 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 38
+[04-Dec-2014 16:56:17 UTC] PHP Notice:  Undefined offset: 49 in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:57:12 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:57:12 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 16:58:46 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:58:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 16:59:33 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 16:59:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 17:03:30 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 17:03:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 17:24:07 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 17:24:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[04-Dec-2014 17:39:49 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[04-Dec-2014 17:39:49 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/jodyone/public_html/public/register.php:37) in /home/jodyone/public_html/includes/functions.php on line 177
+[09-Mar-2015 21:18:03 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
+[12-Apr-2015 20:45:56 UTC] PHP Notice:  Undefined index: id in /home/jodyone/public_html/public/register.php on line 37
