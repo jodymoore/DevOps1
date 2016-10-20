@@ -45,7 +45,7 @@
    echo '</fieldset>';
    echo '</form>';
    echo '</div>';
-   echo '</body>';
+   echo '</body></html>';
 
 ?> 
 
