@@ -2,8 +2,8 @@
     // configuration
    require 'aws-autoloader.php';
 
-   $region='%region%';
-   $bucket='%bucket%';
+   $region='us-east-1';
+   $bucket='ncrov';
 
    echo '<!DOCTYPE html>';
    echo '<html>';
