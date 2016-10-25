@@ -8,7 +8,7 @@
    echo '<!DOCTYPE html>';
    echo '<html>';
    echo '<head>';
-   echo '<link href="href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" rel="stylesheet"/>';
+   echo '<link href=http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" rel="stylesheet"/>';
    echo '<link href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.min.css" rel="stylesheet"/>';
    echo '<link href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap-theme.min.css" rel="stylesheet"/>';
    echo '<link href="http://' . $bucket  . '.s3.amazonaws.com/public/css/styles.css" rel="stylesheet"/>';
