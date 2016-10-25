@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red27\green29\blue31;\red235\green236\blue237;\red87\green96\blue105;
+}
+\margl1440\margr1440\vieww17340\viewh11540\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Pasted Graphic.tiff \width17300 \height8980
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Lab 1 \
+\
+Deploying A web Application on AWS\
+\
+( main tasks only no sub group instructions )\
+\
+Task 1: Create IAM Users and Roles\
+\
+Task1.1: Create IAM User And Role\
+\
+Task1.2: Set Permissions for LabUser\
+\
+Task1.3: Create an IAM Role\
+\
+Task 1.4: Switch to your IAM user and create a bucket\
+\
+Task 1.5: Customize your command reference file\
+\
+Task 2: Create the Network Layer\
+\
+Task 2.1: Create the VPC\
+\
+Task 2.2: Attach an Internet Gateway (IGW)\
+\
+Task 2.3: Create the Public Subnet\
+\
+Task 2.4: Configure the Route Table\
+\
+Task 3: Build the Compute, Storage and Database Layer\
+\
+Task 3.1: Create the Web Server\
+\
+Task 3.3: Connect to the WebServer\
+\
+Task 3.4: Configure your server and DynamoDB table\
+\
+\
+VPC CIDR 10.200.0.0/16\
+Public Subnet1 CIDR 10.200.10.0/24\
+Private Subnet1 CIDR 10.200.10.0/24\
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf0 \expnd0\expndtw0\kerning0
+Architecting on AWS: Create an Elastic System with Auto Scaling\
+\
+==================================================================================================================\
+\
+Using this command reference.\
+\
+==================================================================================================================\
+\
+1. Locate the section you need. Each section in this file matches a section in the lab instructions.\
+\
+2. Replace items in brackets - [] - with appropriate values. For example, in this command you would replace the value - [JobFlowID] - (including the brackets) with the parameter indicated in the lab instructions:\
+\
+elastic-mapreduce --list [JobFlowID]\
+\
+would become\
+\
+elastic-mapreduce --list abc123\
+\
+3. Do NOT enable the Word Wrap feature in Windows Notepad or the text editor you use to view this file.\
+\
+\
+==================================================================================================================\
+\
+Step 3.1.6: Create and Configure the Amazon EC2 instance\
+\
+==================================================================================================================\
+\
+#!/bin/bash\
+yum remove -y httpd php\
+yum install -y httpd24 php56\
+chkconfig httpd on\
+wget 
+\f2\fs26 \cf2 \cb3 https://raw.githubusercontent.com/jodymoore/DevOps1/master/index.php
+\f1\fs24 \cf0 \cb1  \
+/* unzip ncrov.zip -d /home/ec2-user/ */\
+mv /home/ec2-user/index.php /var/www/html/index.php\
+wget https://github.com/aws/aws-sdk-php/releases/download/3.15.9/aws.zip\
+unzip aws -d /var/www/html\
+service httpd start\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth920\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr300 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth10860\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl20\qc\partightenfactor0
+
+\f3\fs2 \cf4 accepted\cell 
+\pard\intbl\itap1\pardeftab720\sl380\sa300\partightenfactor0
+
+\fs30 \cf2 \
+\pard\intbl\itap1\pardeftab720\sl320\partightenfactor0
+
+\f2\fs26 \cf2 \cb3 \cell \lastrow\row
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1\fs24 \cf0 \cb1 \
+\
+==================================================================================================================\
+\
+Task 3.4: Offload Static Content to S3\
+\
+==================================================================================================================\
+\
+Step 3.4.2:\
+aws s3 ls ncrov --region us-east-1\
+\
+Step 3.4.3:\
+cd /home/ec2-user/ncrov\
+\
+Step 3.4.4:\
+aws s3 cp /home/ec2-user/ncrov/public/jquery/ s3://ncrov/public/jquery/ --recursive --acl public-read --region us-east-1\
+\
+Step 3.4.5:\
+aws s3 cp /home/ec2-user/ncrov/public/img/ s3://ncrov/public/img --recursive --acl public-read --region us-east-1\
+\
+Step 3.4.6:\
+aws s3 ls s3://ncrov/ --region us-east-1 --recursive\
+\
+Step 3.4.7:\
+sudo sed -i '2s/%region%/us-east-1/g' /var/www/html/index.php\
+\
+sudo sed -i '3s/%bucket%/ncrov/g\'92 /var/www/html/index.php\
+\
+Step 3.4.16:\
+aws dynamodb batch-write-item --request-items file:///home/ec2-user/lab1src/scripts/services1.json --region <region>\
+\
+aws dynamodb batch-write-item --request-items file:///home/ec2-user/lab1src/scripts/services2.json --region <region>\
+\
+aws dynamodb batch-write-item --request-items file:///home/ec2-user/lab1src/scripts/services3.json --region <region>\
+\
+Step 3.4.17 (optional):\
+aws dynamodb scan --table-name AWS-Services --region <region>\
+\
+\
+Copyright 2016 Amazon Web Services, Inc. or its affiliates. All rights reserved.}
