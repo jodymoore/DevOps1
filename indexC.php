@@ -7,7 +7,7 @@ $categories=NULL;
 $table_name = 'AWS-Services';
     // configuration
 require 'aws-autoloader.php';
-require("/includes/config.php");
+require("includes/config.php");
 date_default_timezone_set('UTC');
 try {
    $sdk = new Aws\Sdk([
@@ -25,6 +25,6 @@ catch(Exception $e) {
    $tmp=$e->getMessage();
    $categories=NULL;
 }
- 
-   render("/templates/select_form.php");
+
+   render("templates/select_form.php");
 ?> 
