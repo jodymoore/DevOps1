@@ -27,13 +27,13 @@ catch(Exception $e) {
   
    echo '<html>';
    echo '<head>';
-   if(is_null($categories)==0){
-      echo '<link rel="stylesheet" href=http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" />';
-      echo '<link  rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.min.css" />';
-      echo '<link rel="stylesheet" rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap-theme.min.css" />';
-      echo '<link rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/styles.css" />';
-      echo '<link  rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.theme.css" />';
-   }
+  
+   echo '<link rel="stylesheet" href=http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" />';
+   echo '<link  rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.min.css" />';
+   echo '<link rel="stylesheet" rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap-theme.min.css" />';
+   echo '<link rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/styles.css" />';
+   echo '<link  rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.theme.css" />';
+   
    echo '<script src="http://' . $bucket  . '.s3.amazonaws.com/public/js/jquery-1.10.2.min.js"></script>';
    echo '<script src="http://' . $bucket  . '.s3.amazonaws.com/public/js/bootstrap.min.js"></script>';
    echo '<script src="http://' . $bucket  . '.s3.amazonaws.com/public/js/bootstrap.js"></script>';
