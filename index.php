@@ -1,25 +1,39 @@
 <?php
     // configuration
-   require 'aws-autoloader.php';
+$region='%region%';
+$bucket='%bucket%';
+$tmp='';
+$categories=NULL;
+$table_name = 'AWS-Services';
+require 'aws-autoloader.php';
+date_default_timezone_set('UTC');
+try {
+   $sdk = new Aws\Sdk([
+         'region' => $region,
+      'version'   => 'latest'
+   ]);
 
-   $region='us-east-1';
-   $bucket='ncrov';
+   $dynamodb = $sdk->createDynamoDb();
+   $response = $dynamodb->describeTable(array('TableName' => $table_name));
+   $categories = $dynamodb->scan(array(   'TableName' => $table_name, 
+                  'AttributeValueList' => array(array('S' => 'Category'))
+   ));
+}
+catch(Exception $e) {
+   $tmp=$e->getMessage();
+   $categories=NULL;
+}
 
-   echo '<!DOCTYPE html>';
+  
    echo '<html>';
    echo '<head>';
-   echo '<link href=http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" rel="stylesheet"/>';
-   echo '<link href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.min.css" rel="stylesheet"/>';
-   echo '<link href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap-theme.min.css" rel="stylesheet"/>';
-   echo '<link href="http://' . $bucket  . '.s3.amazonaws.com/public/css/styles.css" rel="stylesheet"/>';
-   echo '<link href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.theme.css" rel="stylesheet"/>';
-
- if (isset($title)): 
-            <title>Rover1: = htmlspecialchars($title) </title>
-         else: 
-            <title>Rover1</title>
-         endif 
-
+   if(is_null($categories)==0){
+      echo '<link rel="stylesheet" href=http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" />';
+      echo '<link  rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.min.css" />';
+      echo '<link rel="stylesheet" rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap-theme.min.css" />';
+      echo '<link rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/styles.css" />';
+      echo '<link  rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.theme.css" />';
+   }
    echo '<script src="http://' . $bucket  . '.s3.amazonaws.com/public/js/jquery-1.10.2.min.js"></script>';
    echo '<script src="http://' . $bucket  . '.s3.amazonaws.com/public/js/bootstrap.min.js"></script>';
    echo '<script src="http://' . $bucket  . '.s3.amazonaws.com/public/js/bootstrap.js"></script>';
@@ -46,5 +60,4 @@
    echo '</form>';
    echo '</div>';
    echo '</body></html>';
-
 ?> 
