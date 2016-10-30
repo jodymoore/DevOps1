@@ -51,10 +51,10 @@ catch(Exception $e) {
    echo '<fieldset>';
    echo '<ul  class="nav nav-pills ">';
    echo '<div>';
-   echo '<li><a href="http://' . $bucket  . '.s3.amazonaws.com/public/demo.php">Demo</a></li>';
+   echo '<li><a href="/home/ec2-user/ncrov/public/demo.php">Demo</a></li>';
    echo '</div> ';
-   echo '<li><a href="http://' . $bucket  . '.s3.amazonaws.com/public/hud.php">With WiFi Camera</a></li>';
-   echo '<li><a href="http://' . $bucket  . '.s3.amazonaws.com/public/hud2.php">With Out WiFi Camera</a></li>';
+   echo '<li><a href="/home/ec2-user/ncrov/public/hud.php">With WiFi Camera</a></li>';
+   echo '<li><a href="/home/ec2-user/ncrov/public/hud2.php">With Out WiFi Camera</a></li>';
    echo '</ul>';
    echo '</fieldset>';
    echo '</form>';
