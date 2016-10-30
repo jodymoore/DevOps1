@@ -28,7 +28,7 @@ catch(Exception $e) {
    echo '<html>';
    echo '<head>';
   
-   echo '<link rel="stylesheet" href=http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" />';
+   echo '<link rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.css" />';
    echo '<link rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap.min.css" />';
    echo '<link rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/bootstrap-theme.min.css" />';
    echo '<link rel="stylesheet" href="http://' . $bucket  . '.s3.amazonaws.com/public/css/styles.css" />';
@@ -51,10 +51,10 @@ catch(Exception $e) {
    echo '<fieldset>';
    echo '<ul  class="nav nav-pills ">';
    echo '<div>';
-   echo '<li><a href=http://' . $bucket  . '.s3.amazonaws.com/public/demo.php">Demo</a></li>';
+   echo '<li><a href="http://' . $bucket  . '.s3.amazonaws.com/public/demo.php">Demo</a></li>';
    echo '</div> ';
-   echo '<li><a href=http://' . $bucket  . '.s3.amazonaws.com/public/hud.php">With WiFi Camera</a></li>';
-   echo '<li><a href=http://' . $bucket  . '.s3.amazonaws.com/public/hud2.php">With Out WiFi Camera</a></li>';
+   echo '<li><a href="http://' . $bucket  . '.s3.amazonaws.com/public/hud.php">With WiFi Camera</a></li>';
+   echo '<li><a href="http://' . $bucket  . '.s3.amazonaws.com/public/hud2.php">With Out WiFi Camera</a></li>';
    echo '</ul>';
    echo '</fieldset>';
    echo '</form>';
