@@ -23,10 +23,7 @@ catch(Exception $e) {
    $tmp=$e->getMessage();
    $categories=NULL;
 }
-    // configuration
-   require("/includes/config.php");
 
-   render("/public/select_form.php");
   
    echo '<html>';
    echo '<head>';
