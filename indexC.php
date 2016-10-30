@@ -26,5 +26,5 @@ catch(Exception $e) {
    $categories=NULL;
 }
 
-   render("templates/select_form.php");
+   render("select_form.php");
 ?> 
