@@ -1,7 +1,28 @@
 <?php
 
     // configuration
-    require("/includes/config.php"); 
+    require("../includes/config.php"); 
+
+    $region='us-east-1';
+    $bucket='%bucket%';
+    $tmp='';
+  
+
+    $table_name = 'users';
+    require 'aws-autoloader.php';
+    date_default_timezone_set('UTC');
+    try {
+        $sdk = new Aws\Sdk([
+                'region'    => $region,
+            'version'   => 'latest'
+        ]);
+
+        $dynamodb = $sdk->createDynamoDb();
+
+    }
+    catch(Exception $e) {
+        $tmp=$e->getMessage();        
+    }
 
     // if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST")
