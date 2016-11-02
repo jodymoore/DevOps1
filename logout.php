@@ -33,8 +33,10 @@
         ]);
 
     // log out current user, if any
-    logout();
+    session_unset();
     session_destroy();
+    $_SESSION = array();
+    
     // redirect user
     redirect("/");
 
