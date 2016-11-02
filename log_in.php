@@ -11,8 +11,8 @@
 
     $table_name = 'users';
     require ('../aws-autoloader.php');
-    date_default_timezone_set('UTC');
-  
+    date_default_timezone_set('America/Chicago');
+ 
     // if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -26,79 +26,57 @@
             apologize("You must provide your password.");
         }
 
-        
-    date_default_timezone_set('UTC');
+	$sdk = new Aws\Sdk([
+	    'region'   => 'us-east-1',
+	    'version'  => 'latest'
+	]);
+	
+	$dynamodb = $sdk->createDynamoDB();
 
-    $sdk = new Aws\Sdk([
-        'region'   => 'us-east-1',
-        'version'  => 'latest'
-    ]);
-    
-    $dynamodb = $sdk->createDynamoDb();
-    $marshaler = new Marshaler();
+	$tableName = 'users';
 
-    $tableName = 'users';
+	$username = $_POST["username"];
+         $response = $dynamodb->getItem ([
+             'TableName' => $tableName,
+             'ConsistentRead' => true,
+             'Key' => [
+             'username' => ['S' => $username]
+              ],
+             "AttributesToGet" => ["password", "id"] 
+         ]);
 
-    $username = (string)$_POST["username"];
-         $rows = $dynamodb->getItem ([
-         'TableName' => $tableName,
-          'ConsistentRead' => true,
-           'Key' => [
-                  'username' => [
-                        'S' => $username 
-                 ] 
-            ],
-            'ProjectionExpression' => 'username, hashV, id' 
-         ] );
-        print_r ( $response ['Item'] );
         // if we found user, check password
-       
-        if (count($rows) == 1)
+       $resToken = $response["Item"]["password"]['S'];
+       $idToken = $response["Item"]["id"]['S'];
+      
+        if (empty($resToken) == false)
         {
-            // first (and only) row
-            $row = $rows[0];
-
+        
+         //  print_r ($rows['Item']);
             // compare hash of user's input against hash that's in database
-            if (crypt($_POST["password"], $row["hash"]) == $row["hash"])
+            if (crypt($_POST["password"],$resToken) == $resToken)
             {
                 // remember that user's now logged in by storing user's ID in session
-                $_SESSION["id"] = $row["id"];
+                $_SESSION["id"] = $idToken;
             
                 $table_name2 = 'rover_log_in';
-             
-             require ('../aws-autoloader.php'); 
-             date_default_timezone_set('UTC');
-             try {
-                 $sdk = new Aws\Sdk([
-                    'region'    => $region,
-                    'version'   => 'latest'
-             ]);
-
-             $dynamodb = $sdk->createDynamoDb();
-
-             }
-             catch(Exception $e) {
-                   $tmp=$e->getMessage();
-              }
-              
-
+                $dateTime =  (string)date('m/d/Y G:m:s'); 
                 // update DynamoDB table with id and time()     
                 $response = $dynamodb->putItem([
                     'TableName' => $table_name2,
                     'Item' => [
-                    'id' => ['N' => $_SESSION["id"]],                   
-                    'log_in' =>['N' => time()], 
+                    'user_id' => ['S' => $idToken ],                   
+                    'log_in' =>['S' => $dateTime], 
                            ]
                 ]);
-          
                // redirect to select.php
-                redirect("select.php");
+               redirect("select.php");
             }
 
         }
 
         // else apologize
-     //   apologize("Invalid username and/or password.");
+        apologize("Invalid username and/or password.");
     }
     else
     {
