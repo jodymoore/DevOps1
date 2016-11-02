@@ -60,7 +60,7 @@
                 $_SESSION["id"] = $idToken;
             
                 $table_name2 = 'rover_log_in';
-                $dateTime =  (string)date('m/d/Y G:m:s'); 
+                $dateTime =  (string)date.timezone_location_get(); 
                 // update DynamoDB table with id and time()     
                 $response = $dynamodb->putItem([
                     'TableName' => $table_name2,
