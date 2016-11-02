@@ -8,6 +8,7 @@
     $bucket='%bucket%';
     $tmp='';
      
+   
 
     $table_name = 'users';
     require ('../aws-autoloader.php');
@@ -60,7 +61,9 @@
                 $_SESSION["id"] = $idToken;
             
                 $table_name2 = 'rover_log_in';
-                $dateTime =  (string)date.timezone_location_get(); 
+
+                $date = new date_create();
+                $dateTime =  (string)date_format($date); 
                 // update DynamoDB table with id and time()     
                 $response = $dynamodb->putItem([
                     'TableName' => $table_name2,
