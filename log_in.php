@@ -11,7 +11,7 @@
 
     $table_name = 'users';
     require ('../aws-autoloader.php');
-    date_default_timezone_set('America/Chicago');
+    date_default_timezone_set('America/New_York');
  
     // if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST")
