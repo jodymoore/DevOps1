@@ -3,7 +3,7 @@
     // configuration
     require("../includes/config.php"); 
     require ('../aws-autoloader.php');
-    
+
     date_default_timezone_set('America/New_York');
     $region='us-east-1';
     $bucket='%bucket%';
@@ -20,7 +20,8 @@
             
     $table_name2 = 'rover_log_out';
 
-    $dateTime =  (string)date.timezone_location_get(); 
+    $date = new date_create();
+    $dateTime =  (string)date_format($date);
     // update DynamoDB table with id and time()     
      $response = $dynamodb->putItem([
         'TableName' => $table_name2,
