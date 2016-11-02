@@ -27,16 +27,16 @@
             apologize("You must provide your password.");
         }
 
-	$sdk = new Aws\Sdk([
-	    'region'   => 'us-east-1',
-	    'version'  => 'latest'
-	]);
-	
-	$dynamodb = $sdk->createDynamoDB();
+  $sdk = new Aws\Sdk([
+      'region'   => 'us-east-1',
+      'version'  => 'latest'
+  ]);
+  
+  $dynamodb = $sdk->createDynamoDB();
 
-	$tableName = 'users';
+  $tableName = 'users';
 
-	$username = $_POST["username"];
+  $username = $_POST["username"];
          $response = $dynamodb->getItem ([
              'TableName' => $tableName,
              'ConsistentRead' => true,
@@ -62,8 +62,9 @@
             
                 $table_name2 = 'rover_log_in';
 
-                $date = new date_create();
-                $dateTime =  (string)date_format($date); 
+                $date = new DateTime();
+                $date->getTimestamp(); 
+                $dateTime =  (string)date('m/d/Y G:m:s'); 
                 // update DynamoDB table with id and time()     
                 $response = $dynamodb->putItem([
                     'TableName' => $table_name2,
