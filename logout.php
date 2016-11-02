@@ -3,7 +3,7 @@
     // configuration
     require("../includes/config.php");
     require ('../aws-autoloader.php');
-
+    use Aws\DynamoDb\Exception\DynamoDbException;
     date_default_timezone_set('America/New_York');
     $region='us-east-1';
     $bucket='%bucket%';
