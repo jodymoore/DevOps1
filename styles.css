@@ -20,7 +20,8 @@ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 font-size: 14px;
 line-height: 1.428571429;
 color: #fff;
-background-image: url("/public/img/black_holes.jpg");
+background-image: url("http://ncrov.s3.amazonaws.com/img/black_holes.jpg");
+
 }
 .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th
 {
