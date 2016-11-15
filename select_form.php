@@ -1,6 +1,6 @@
 <div id="middle">
 	<form action="select.php" method="post">
-	<a  align="center"><img id="img2"alt="Rover" width="500" height="400" src="http://ncrov.s3.amazonaws.com/img/rover_img5.jpg"/></a>   
+	<a  align="center"><img id="img2"alt="Rover" width="500" height="400" src="http://s3.amazonaws.com/ncrov/public/img/rover_img5.jpg"/></a>   
      <fieldset>      
        <ul  class="nav nav-pills "> 
            <div>
